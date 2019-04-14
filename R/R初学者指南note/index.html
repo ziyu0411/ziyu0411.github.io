@@ -8,14 +8,13 @@
     <meta name="description" content="R初学者指南引言程序包
 载入 library
 
-安装 install.packages  
+安装install.packages
 手动下载-R website-CRAN-software-packages
 R里下载安装
 
 
 R的一般问题
-退出q(save=” “)
-R代码保存在">
+退出q(save=&amp;quot; &amp;quot;)">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -308,26 +307,26 @@ R代码保存在">
                 <h1 id="R初学者指南"><a href="#R初学者指南" class="headerlink" title="R初学者指南"></a>R初学者指南</h1><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><h3 id="程序包"><a href="#程序包" class="headerlink" title="程序包"></a>程序包</h3><ul>
 <li><p>载入 library</p>
 </li>
-<li><p>安装 install.packages  </p>
-<p>手动下载-R website-CRAN-software-packages</p>
+<li><p>安装<code>install.packages</code></p>
+<p>手动下载<code>-R website-CRAN-software-packages</code></p>
 <p>R里下载安装</p>
 </li>
 </ul>
 <h3 id="R的一般问题"><a href="#R的一般问题" class="headerlink" title="R的一般问题"></a>R的一般问题</h3><ul>
-<li>退出q(save=” “)</li>
+<li>退出<code>q(save=&quot; &quot;)</code></li>
 <li>R代码保存在文本编辑器中而不是工作空间中</li>
-<li>file-&lt;Save Workspace,file-&lt;Load Workspace</li>
-<li>citation()如何引用程序包</li>
+<li><code>file-&lt;Save Workspace,file-&lt;Load Workspace</code></li>
+<li><code>citation()</code>如何引用程序包</li>
 </ul>
 <h2 id="R中的数据输入"><a href="#R中的数据输入" class="headerlink" title="R中的数据输入"></a>R中的数据输入</h2><h3 id="R中的第一步"><a href="#R中的第一步" class="headerlink" title="R中的第一步"></a>R中的第一步</h3><ul>
 <li><p>小型数据库中数据的录入</p>
 <p>赋值a&lt;-59 &lt;-可以用=代替 定义了变量以后可以对他进行运算，但是一些符号不能出现在变量名里，他们大部分是运算符号</p>
 </li>
 <li><p>应用c函数连接数据（concatenate）</p>
-<p>a&lt;-c(1,2,3,4,5,6)向量，R中的变量名做好使用大写字母开头与内部函数区分；在进行运算时，由于缺失值出现报错，可加上na.rm=TRUE/T 去掉缺失值进行运算</p>
+<p><code>a&lt;-c(1,2,3,4,5,6)</code>向量，R中的变量名做好使用大写字母开头与内部函数区分；在进行运算时，由于缺失值出现报错，可加上na.rm=TRUE/T 去掉缺失值进行运算</p>
 </li>
 <li><p>c,cbind,rbind 结合变量</p>
-<p>产生1-4：使用从c(),1:4,seq(from=1,to=4,by=1)</p>
+<p>产生1-4：使用从<code>c(),1:4,seq(from=1,to=4,by=1)</code></p>
 <p>dim(z),知道z的维数</p>
 <p>c/rbind 分别以列和行的形式将变量进行整理</p>
 </li>
@@ -335,7 +334,7 @@ R代码保存在">
 <p>优点是可以事先定义向量的长度 </p>
 </li>
 <li><p>使用矩阵结合数据</p>
-<p>data&lt;-matrix(nrow=8,ncol=4) 创建8行4列的矩阵</p>
+<p><code>data&lt;-matrix(nrow=8,ncol=4)</code> 创建8行4列的矩阵</p>
 <p>colnames,</p>
 <p>as.matrix</p>
 </li>
@@ -354,17 +353,16 @@ R代码保存在">
 </li>
 <li><p>数据提取到制表符分割ASCII文件：</p>
 </li>
-<li><p>read.table()函数的使用：data=&lt;read.table(file=’’ \ \“,header=TRUE dec=”,”) 文件路径也可以是///,dec表示小数点，sep 分隔符，strip.white=TRUE 数据中含有空格</p>
+<li><p>read.table()函数的使用：<code>data=&lt;read.table(file=&#39;&#39; \ \\&quot;,header=TRUE dec=&quot;,&quot;)</code>文件路径也可以是///,dec表示小数点，sep 分隔符，strip.white=TRUE 数据中含有空格</p>
 <p><u>路径表示 两条左斜杠，一条右斜杠</u></p>
 <p>setwd()设置工作目录，在使用此函数载入数据。数据框。</p>
 <p>scan 数据存在矩阵中</p>
 </li>
 </ol>
 <h4 id="从其他统计程序包中访问数据"><a href="#从其他统计程序包中访问数据" class="headerlink" title="从其他统计程序包中访问数据"></a>从其他统计程序包中访问数据</h4><p>   可从SAS,SPSS,等中载入，可以载入foreign得到相应的操作</p>
-<h4 id="访问数据库"><a href="#访问数据库" class="headerlink" title="访问数据库"></a>访问数据库</h4><p>library（RODBC）,需要建立与数据库的连接odbcConnectAccess(file=，uid=,pwd=)</p>
-<p><img src="C:\Users\User\Desktop\捕获.PNG" alt="捕获"></p>
+<h4 id="访问数据库"><a href="#访问数据库" class="headerlink" title="访问数据库"></a>访问数据库</h4><p>library（RODBC）,需要建立与数据库的连接<code>odbcConnectAccess(file=，uid=,pwd=)</code></p>
 <p>R中矩阵运算的总结<a href="https://blog.csdn.net/hnu_lb/article/details/38419405" target="_blank" rel="noopener">矩阵运算</a></p>
-<h2 id="访问变量和处理数据子集"><a href="#访问变量和处理数据子集" class="headerlink" title="访问变量和处理数据子集"></a>访问变量和处理数据子集</h2><h3 id="访问数据框变量"><a href="#访问数据框变量" class="headerlink" title="访问数据框变量"></a>访问数据框变量</h3><p><strong>建议使用read.table()命令后。立即使用names()命令查看正在处理的变量。</strong></p>
+<h2 id="访问变量和处理数据子集"><a href="#访问变量和处理数据子集" class="headerlink" title="访问变量和处理数据子集"></a>访问变量和处理数据子集</h2><h3 id="访问数据框变量"><a href="#访问数据框变量" class="headerlink" title="访问数据框变量"></a>访问数据框变量</h3><p><strong>建议使用<code>read.table()</code>命令后。立即使用<code>names()</code>命令查看正在处理的变量。</strong></p>
 <ul>
 <li><p><strong>str函数：表明数据框中变量的属性</strong></p>
 </li>
@@ -372,24 +370,24 @@ R代码保存在">
 </li>
 <li><p>$符号：如果没有data参数，两种方式访问变量</p>
 <ol>
-<li>data$a (变量名)</li>
+<li><code>data$a</code>(变量名)</li>
 <li>data[ ,6]</li>
 </ol>
 </li>
-<li><p>attach函数：attach(data),就可以直接访问data中的变量。</p>
+<li><p>attach函数：<code>attach(data)</code>,就可以直接访问data中的变量。</p>
 <p>值得注意的是如果绑定了含有相同变量的数据框或者变量在R自带的函数相同。则会出现问题。使用完detach</p>
 </li>
 </ul>
 <h3 id="访问数据子集"><a href="#访问数据子集" class="headerlink" title="访问数据子集"></a>访问数据子集</h3><p>可以提取数据框子集，按照变量的需求</p>
 <ul>
-<li>数据排序：order()按指定的变量排序</li>
+<li>数据排序：<code>order()</code>按指定的变量排序</li>
 </ul>
 <h3 id="使用相同的标识符组合两个数据集"><a href="#使用相同的标识符组合两个数据集" class="headerlink" title="使用相同的标识符组合两个数据集"></a>使用相同的标识符组合两个数据集</h3><p> 数据合并，merge函数，by=变量名（合并标识）</p>
-<h3 id="输出数据"><a href="#输出数据" class="headerlink" title="输出数据"></a>输出数据</h3><p>write.table()</p>
+<h3 id="输出数据"><a href="#输出数据" class="headerlink" title="输出数据"></a>输出数据</h3><p><code>write.table()</code></p>
 <h3 id="重新编码分类变量"><a href="#重新编码分类变量" class="headerlink" title="重新编码分类变量"></a>重新编码分类变量</h3><p>定义为名义变量，可以使用factor()函数，levels，labels</p>
-<p> 或者使用as.factor()函数</p>
+<p> 或者使用<code>as.factor()</code>函数</p>
 <h2 id="简单的函数"><a href="#简单的函数" class="headerlink" title="简单的函数"></a>简单的函数</h2><h3 id="tapply函数"><a href="#tapply函数" class="headerlink" title="tapply函数"></a>tapply函数</h3><ul>
-<li>计算均值mean(),如果要计算某个变量截面下的均值，使用mean函数需要多个命令逐一计算没比较麻烦，而tapply只需要一行代码就可以搞定，tapply(X=,INDEX=,FUN=)</li>
+<li>计算均值<code>mean()</code>,如果要计算某个变量截面下的均值，使用mean函数需要多个命令逐一计算没比较麻烦，而tapply只需要一行代码就可以搞定，<code>tapply(X=,INDEX=,FUN=)</code></li>
 <li>计算的是一个变量观察值自己的均值等函数</li>
 </ul>
 <h3 id="sapply和lapply函数"><a href="#sapply和lapply函数" class="headerlink" title="sapply和lapply函数"></a>sapply和lapply函数</h3><ul>
@@ -403,9 +401,8 @@ R代码保存在">
 <h3 id="table函数"><a href="#table函数" class="headerlink" title="table函数"></a>table函数</h3><ul>
 <li>按照数据集里的某个变量提供观察值得数量</li>
 </ul>
-<p><img src="C:\Users\User\Desktop\捕获.PNG" alt="捕获"></p>
 <h2 id="基础绘图工具简介"><a href="#基础绘图工具简介" class="headerlink" title="基础绘图工具简介"></a>基础绘图工具简介</h2><h3 id="plot函数"><a href="#plot函数" class="headerlink" title="plot函数"></a>plot函数</h3><ul>
-<li><p>plot(y~x,data=),或者plot(x,y)但这种形式不可以使用data参数</p>
+<li><p><code>plot(y~x,data=)</code>,或者plot(x,y)但这种形式不可以使用data参数</p>
 </li>
 <li><p>x/ylab设置坐标轴的名称””，x/ylim设置坐标轴的界限c()函数,main函数用于标题</p>
 </li>
@@ -419,27 +416,26 @@ R代码保存在">
 <p>对cex可以使用向量，定义对不同变量不同大小的符号</p>
 </li>
 <li><p>添加平滑线</p>
-<p>lines(),lwd,lty参数<img src="C:\Users\User\Desktop\捕获.PNG" alt="捕获"></p>
 </li>
 </ul>
 <h2 id="循环与函数"><a href="#循环与函数" class="headerlink" title="循环与函数"></a>循环与函数</h2><p>  jump jump jump </p>
 <h2 id="图形工具"><a href="#图形工具" class="headerlink" title="图形工具"></a>图形工具</h2><h3 id="饼图"><a href="#饼图" class="headerlink" title="饼图"></a>饼图</h3><h4 id="par函数"><a href="#par函数" class="headerlink" title="par函数"></a>par函数</h4><ul>
-<li>mfrow=c()生成图形窗口，表示生成饼图的排列结构</li>
+<li><code>mfrow=c()</code>生成图形窗口，表示生成饼图的排列结构</li>
 <li>mar选项指定每个图形周围空白的大小</li>
-<li>pie(data, main=)</li>
+<li><code>pie(data, main=)</code></li>
 </ul>
 <h3 id="条形图和带形图"><a href="#条形图和带形图" class="headerlink" title="条形图和带形图"></a>条形图和带形图</h3><ul>
-<li>barplot()</li>
+<li><code>barplot()</code></li>
 <li>显示均值和标准差的条形图，使用arrow函数将表示标准差的垂直线加到图形上，主要就是在（x1,y1）和（x2,y2）两点间画一个箭头，亮点具有相同的x值，将会产生一个垂直箭头。y1的值是均值，y2的值是均值加上标准差。</li>
 </ul>
 <h3 id="盒形图"><a href="#盒形图" class="headerlink" title="盒形图"></a>盒形图</h3><ul>
 <li>最经常使用，主要用在连续型数值响应因变量和自变量时。</li>
 <li>目的：探测离群值，显示不同成分分布和解释变量的影响</li>
-<li>boxplot(y~x,data=)</li>
+<li><code>boxplot(y~x,data=)</code></li>
 </ul>
 <h3 id="克利夫兰点图"><a href="#克利夫兰点图" class="headerlink" title="克利夫兰点图"></a>克利夫兰点图</h3><ul>
 <li>可以检测离群值</li>
-<li>dotchart()中的groups选项允许数据根据分类变量分组</li>
+<li><code>dotchart()</code>中的groups选项允许数据根据分类变量分组</li>
 <li>添加均值</li>
 </ul>
 <h3 id="重新访问plot函数"><a href="#重新访问plot函数" class="headerlink" title="重新访问plot函数"></a>重新访问plot函数</h3><ul>
@@ -454,17 +450,13 @@ R代码保存在">
 </li>
 <li><p>使用type=”n”</p>
 <p>绘制除数据以外的所有事情</p>
-<p><img src="C:\Users\User\Desktop\1111.PNG" alt="1111"></p>
+<p>图例 legend()可选参数包括，图例的位置，形状，大小等</p>
 </li>
-<li><p>图例 legend()可选参数包括，图例的位置，形状，大小等</p>
+<li><p>识别点<code>identify()</code>函数可以识别和绘制图形上的点</p>
 </li>
-<li>识别点 identify()函数可以识别和绘制图形上的点</li>
 <li>改变字体和字体大小  pointsize点的大小；Font定义字型，整数定义</li>
 <li>添加特殊符号  常用experssion</li>
-<li>其他有用的函数</li>
 </ul>
-<p><img src="C:\Users\User\Desktop\2.PNG" alt="2"></p>
-<p><img src="C:\Users\User\Desktop\1.PNG" alt="1"></p>
 <h3 id="多组图"><a href="#多组图" class="headerlink" title="多组图"></a>多组图</h3><p>绘制多个连续型变量的散点图，可以使用plot函数通过绘制1对2，,1对3,1对4等完成，然后用mfrow和mar把他们绘制在单个图形里。但<strong>pairs可以用来生成多面板散点图</strong></p>
 <ul>
 <li>面板函数panel</li>
@@ -480,7 +472,7 @@ R代码保存在">
 <li>小数点或者逗号分隔符 </li>
 <li>目录名 载入数据的目录名包含非英语字母符号，会出问题</li>
 </ul>
-<h3 id="绑定苦恼"><a href="#绑定苦恼" class="headerlink" title="绑定苦恼"></a>绑定苦恼</h3><p>是否使用attach()函数</p>
+<h3 id="绑定苦恼"><a href="#绑定苦恼" class="headerlink" title="绑定苦恼"></a>绑定苦恼</h3><p>是否使用<code>attach()</code>函数</p>
 <ul>
 <li>输入attach命令两次，变量会产生重复的可利用副本，发生错误，所以再重新运行attach前一定要使用detach函数</li>
 <li>绑定包含同一个变量名称的两个数据框，不可以</li>
@@ -599,7 +591,7 @@ X-she</div>
                 Next&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/学习tips/">
+                <a href="/tips/">
                     <div class="card-image">
                         
                         
@@ -609,17 +601,17 @@ X-she</div>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">常用的快捷键iTerm
+                    <div class="summary">iTerm
 Ctrl +C 停止正在运行的程序
 按住command可以点击出现的链接并打开
 向上箭头可以找到输入过的命令
+
 touch 新建一个空文件
+
 sudo 获取权限
 
-###Hexo 
-####一些命令
-
-hexo new </div>
+Hexo一些命令
+hexo new 生成新的 md文件的名字，名</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-09
@@ -628,13 +620,21 @@ hexo new </div>
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/操作/" class="post-category" target="_blank">
-                                    操作
+                            <a href="/categories/Tips/" class="post-category" target="_blank">
+                                    Tips
                                 </a>
                             
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/常用操作/" target="_blank">
+                        <span class="chip bg-color">常用操作</span>
+                    </a>
+                    
                 </div>
                 
             </div>
