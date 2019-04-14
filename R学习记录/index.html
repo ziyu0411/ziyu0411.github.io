@@ -5,16 +5,15 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="R学习记录—生信人应该这样学习R语言视频, Zoey&#39;s Blog">
-    <meta name="description" content="#第一讲 介绍R语言以及Rstudio编辑器
-
+    <meta name="description" content="第一讲 介绍R语言以及Rstudio编辑器
 R studio分为四区
 上下键找到输入过的代码
 帮助文档！help
 右上角，环境变量，运行过的变量
 配置文件：设置中文英文显示形式等
 
-#第二讲 R语言基础变量讲解
-##五种变量类型(cla">
+第二讲 R语言基础变量讲解五种变量类型(class)向量
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -37,7 +36,7 @@ R studio分为四区
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -303,12 +302,25 @@ R studio分为四区
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/R/" target="_blank">
+                                <span class="chip bg-color">R</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/R/" class="post-category" target="_blank">
+                                R
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -332,17 +344,14 @@ R studio分为四区
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>#第一讲 介绍R语言以及Rstudio编辑器</p>
-<ul>
+                <h1 id="第一讲-介绍R语言以及Rstudio编辑器"><a href="#第一讲-介绍R语言以及Rstudio编辑器" class="headerlink" title="第一讲 介绍R语言以及Rstudio编辑器"></a>第一讲 介绍R语言以及Rstudio编辑器</h1><ul>
 <li>R studio分为四区</li>
 <li>上下键找到输入过的代码</li>
 <li>帮助文档！help</li>
 <li>右上角，环境变量，运行过的变量</li>
 <li>配置文件：设置中文英文显示形式等</li>
 </ul>
-<p>#第二讲 R语言基础变量讲解</p>
-<p>##五种变量类型(class)</p>
-<h3 id="向量"><a href="#向量" class="headerlink" title="向量"></a>向量</h3><ul>
+<h1 id="第二讲-R语言基础变量讲解"><a href="#第二讲-R语言基础变量讲解" class="headerlink" title="第二讲 R语言基础变量讲解"></a>第二讲 R语言基础变量讲解</h1><h2 id="五种变量类型-class"><a href="#五种变量类型-class" class="headerlink" title="五种变量类型(class)"></a>五种变量类型(class)</h2><h3 id="向量"><a href="#向量" class="headerlink" title="向量"></a>向量</h3><ul>
 <li>可由c()函数生</li>
 <li>数值，字符(需要加引号，单或双，</li>
 <li>内置函数，如LETTERS[]，也可以取子集substr()</li>
@@ -364,10 +373,10 @@ R studio分为四区
 <h2 id="数据变量索引"><a href="#数据变量索引" class="headerlink" title="数据变量索引"></a>数据变量索引</h2><ul>
 <li><p>b是一个数据框，b[c(T,F,T,F),3]:就表示，一个数据框有四行三列，取出第一和三行的第三列数据。用判断的形式来取出。例如一个RNA-Seq的数据，可以用T or F来取，用grep()[大小写敏感]可以确定找到目标数据的索引</p>
 </li>
-<li><p>关于list ,只能选元素，没有行和列。一层一层往下找到他的索引，选出的元素数据类型仍然是一个list<br>#第三讲 外部数据导入和导出</p>
+<li><p>关于list ,只能选元素，没有行和列。一层一层往下找到他的索引，选出的元素数据类型仍然是一个list</p>
 </li>
 </ul>
-<h2 id="数据导入"><a href="#数据导入" class="headerlink" title="数据导入"></a>数据导入</h2><ul>
+<h1 id="第三讲-外部数据导入和导出"><a href="#第三讲-外部数据导入和导出" class="headerlink" title="第三讲 外部数据导入和导出"></a>第三讲 外部数据导入和导出</h1><h2 id="数据导入"><a href="#数据导入" class="headerlink" title="数据导入"></a>数据导入</h2><ul>
 <li><p>在右上角的，可以import dataset，选择数据格式</p>
 </li>
 <li><p>read.table(‘ 文件路径名’，sep=’\t’,header=T)以制表符分割</p>
@@ -390,17 +399,27 @@ R studio分为四区
 <li><p>每一行取平均值，rowMeans()</p>
 </li>
 <li><p>循环，for 循环，对每一行进行平均值计算</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for(i in 1:nrow(b))&#123;</span><br><span class="line">  print(mean(as.numeric(b[i,])))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-R"><code class="language-R">for(i in 1:nrow(b)){
+  print(mean(as.numeric(b[i,])))
+}
+</code></pre>
 </li>
 <li><p>apply(b,1,)专门针对于矩阵或者数据框的？</p>
 <p>1代表每一行，2代表每一列，第三个参数代表了进行的函数操作，如sd求方差</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apply(b,1,function(x)&#123;</span><br><span class="line">  mean(x)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apply(b,1,max)</span><br></pre></td></tr></table></figure>
+<pre class=" language-R"><code class="language-R">apply(b,1,function(x){
+  mean(x)
+})
+</code></pre>
+<pre class=" language-R"><code class="language-R">apply(b,1,max)
+</code></pre>
 <p>上面两个函数是等价的。</p>
 <p>apply没有for循环那么复杂，因为他是默认按照b里面的数据遗憾一行来取，计算平均值的。</p>
 </li>
 <li><p>ddd=function(x){ } 可以定义一个函数ddd实现想要的计算，一个例如计算一个数据的每一行的最大值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rowmax=function(x)&#123;</span><br><span class="line">  apply(b,1,max)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class=" language-R"><code class="language-R">rowmax=function(x){
+  apply(b,1,max)
+}
+</code></pre>
 <p>就可以调用这个函数计算，但是应该含有包含该函数的</p>
 </li>
 <li><p>sample()可以随机选取一个数据中的莫几行/列，需要定义选选多少</p>
@@ -425,11 +444,15 @@ R studio分为四区
 <li><p>将数据读到R里面</p>
 </li>
 <li><p>某个基因的名称为ENSG00000001167.13，点后面的数字是不需要的，代表着基因的更新，但主要信息是点之前的数字解释的，要去掉掉一系列的基因名字点后面的数字：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a=strsplit(&apos;ENSG00000001167.13,&apos;[.]&apos;)#用点号分割，再取他的左半部分,a是一个list</span><br><span class="line">a[[1]][1]#取a里面的第一个元素，是包含两个向量，再取第一个，就是所需要的基因名字！</span><br></pre></td></tr></table></figure>
+<pre class=" language-r"><code class="language-r">a<span class="token operator">=</span>strsplit<span class="token punctuation">(</span><span class="token string">'ENSG00000001167.13,'</span><span class="token punctuation">[</span>.<span class="token punctuation">]</span>'<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#用点号分割，再取他的左半部分,a是一个list</span>
+a<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token comment" spellcheck="true">#取a里面的第一个元素，是包含两个向量，再取第一个，就是所需要的基因名字！</span>
+</code></pre>
 </li>
 </ol>
 <p>对许多个，可以使用循环，但有R包解决</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">library(stringr)</span><br><span class="line">a$ensembl_id=str_split(a$V1,&apos;[.]&apos;,Simplify=T)[,1] #str_split()这个函数可以完成对a里面V1这一列的所有数据按照&quot;.&quot;分割，再取第一个元素就能实现对ID的简化；并将得到的ID添加到a中</span><br></pre></td></tr></table></figure>
+<pre class=" language-r"><code class="language-r">library<span class="token punctuation">(</span>stringr<span class="token punctuation">)</span>
+a<span class="token operator">$</span>ensembl_id<span class="token operator">=</span>str_split<span class="token punctuation">(</span>a<span class="token operator">$</span>V1<span class="token punctuation">,</span><span class="token string">'[.]'</span><span class="token punctuation">,</span>Simplify<span class="token operator">=</span>T<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true">#str_split()这个函数可以完成对a里面V1这一列的所有数据按照"."分割，再取第一个元素就能实现对ID的简化；并将得到的ID添加到a中</span>
+</code></pre>
 <p>上述函数得到的是一个matrix，是因为simplify=T，否则unlist之后，类型为character，无法取列。</p>
 </li>
 <li><p>library(org.Hs.eg.db)这个包里的函数有个toTable</p>
@@ -445,14 +468,42 @@ R studio分为四区
 <li><p>网页工具搜索找到基因：在OncoLnc中搜索ARHGAP18这个基因，会给出这个基因的cox回归的结果，自己定义一个低表达和高表达的数值，网页工具汇给处一个Kaplan plot<img src="https://zoeypic.oss-cn-beijing.aliyuncs.com/网页工具分析某基因在某癌症中的PCA.png" alt></p>
 </li>
 <li><p>可将该数据下载（表达矩阵）下来使用R语言重现</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">rm(list = ls())</span><br><span class="line">options(stringsAsFactors = F)</span><br><span class="line">a=read.table(file =&apos;/Users/zoey/BLCA_93663_50_50.csv&apos;,header = T,sep = &apos;,&apos;)#读取csv</span><br><span class="line">view(a)#查看读取后的数据状态(也可点击右侧的结果查看)</span><br><span class="line">colnames(a)#查看列名字有哪些</span><br><span class="line">data=a</span><br><span class="line">library(ggstatsplot)#载入使用的R包,第一次使用应该事先安装install.packages()</span><br><span class="line">ggbetweenstats(data = dat,x=Group,y=Expression)#会得到一个关于表达量高和低的小提琴图，是按照Group分组的</span><br></pre></td></tr></table></figure>
-<p><strong>对数据生存分析</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">library(ggplot2)</span><br><span class="line">library(survival)</span><br><span class="line">install.packages(&quot;survminer&quot;)</span><br><span class="line">library(survminer)#安装和载入所需要的R包</span><br><span class="line">table(dat$Status)#查看STATUS这一列不同标签的数值，dead 125，alive 385</span><br><span class="line">dat$Status=ifelse(dat$Status==&apos;Dead&apos;,1,0)</span><br><span class="line">sfit &lt;- survfit(Surv(Days,Status)~Group,data=dat)</span><br><span class="line">sfit#</span><br><span class="line">summary(sfit)</span><br><span class="line">ggsurvplot(sfit,conf.int = F,pval = TRUE)#可以画出生存分析图(如下图)</span><br><span class="line">ggsave(&apos;survival_ARHGAP18_in_BLCA.png&apos;)#保存图片</span><br></pre></td></tr></table></figure>
+<pre class=" language-r"><code class="language-r">rm<span class="token punctuation">(</span>list <span class="token operator">=</span> ls<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+options<span class="token punctuation">(</span>stringsAsFactors <span class="token operator">=</span> F<span class="token punctuation">)</span>
+a<span class="token operator">=</span>read.table<span class="token punctuation">(</span>file <span class="token operator">=</span><span class="token string">'/Users/zoey/BLCA_93663_50_50.csv'</span><span class="token punctuation">,</span>header <span class="token operator">=</span> T<span class="token punctuation">,</span>sep <span class="token operator">=</span> <span class="token string">','</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#读取csv</span>
+view<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token comment" spellcheck="true">#查看读取后的数据状态(也可点击右侧的结果查看)</span>
+colnames<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token comment" spellcheck="true">#查看列名字有哪些</span>
+data<span class="token operator">=</span>a
+library<span class="token punctuation">(</span>ggstatsplot<span class="token punctuation">)</span><span class="token comment" spellcheck="true">#载入使用的R包,第一次使用应该事先安装install.packages()</span>
+ggbetweenstats<span class="token punctuation">(</span>data <span class="token operator">=</span> dat<span class="token punctuation">,</span>x<span class="token operator">=</span>Group<span class="token punctuation">,</span>y<span class="token operator">=</span>Expression<span class="token punctuation">)</span><span class="token comment" spellcheck="true">#会得到一个关于表达量高和低的小提琴图，是按照Group分组的</span>
+
+</code></pre>
+<p>对数据生存分析</p>
+<pre class=" language-r"><code class="language-r">library<span class="token punctuation">(</span>ggplot2<span class="token punctuation">)</span>
+library<span class="token punctuation">(</span>survival<span class="token punctuation">)</span>
+install.packages<span class="token punctuation">(</span><span class="token string">"survminer"</span><span class="token punctuation">)</span>
+library<span class="token punctuation">(</span>survminer<span class="token punctuation">)</span><span class="token comment" spellcheck="true">#安装和载入所需要的R包</span>
+table<span class="token punctuation">(</span>dat<span class="token operator">$</span>Status<span class="token punctuation">)</span><span class="token comment" spellcheck="true">#查看STATUS这一列不同标签的数值，dead 125，alive 385</span>
+dat<span class="token operator">$</span>Status<span class="token operator">=</span>ifelse<span class="token punctuation">(</span>dat<span class="token operator">$</span>Status<span class="token operator">==</span><span class="token string">'Dead'</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span>
+sfit <span class="token operator">&lt;-</span> survfit<span class="token punctuation">(</span>Surv<span class="token punctuation">(</span>Days<span class="token punctuation">,</span>Status<span class="token punctuation">)</span><span class="token operator">~</span>Group<span class="token punctuation">,</span>data<span class="token operator">=</span>dat<span class="token punctuation">)</span>
+sfit<span class="token comment" spellcheck="true">#</span>
+summary<span class="token punctuation">(</span>sfit<span class="token punctuation">)</span>
+ggsurvplot<span class="token punctuation">(</span>sfit<span class="token punctuation">,</span>conf.int <span class="token operator">=</span> F<span class="token punctuation">,</span>pval <span class="token operator">=</span> <span class="token boolean">TRUE</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#可以画出生存分析图(如下图)</span>
+ggsave<span class="token punctuation">(</span><span class="token string">'survival_ARHGAP18_in_BLCA.png'</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#保存图片</span>
+</code></pre>
 <p><img src="https://zoeypic.oss-cn-beijing.aliyuncs.com/R画生存分析图.png" alt></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ggsurvplot(sfit,palette = c(&quot;#E7B800&quot;,&quot;#2E9FDF&quot;),</span><br><span class="line">									risk.table = TRUE,</span><br><span class="line">									pval = TRUE,																																						conf.int = TRUE,</span><br><span class="line">									xlab=&quot;Time in months&quot;, </span><br><span class="line">									ggtheme = theme_light(),</span><br><span class="line">									ncensor.plot = TRUE)</span><br><span class="line">									#对该函数根据需要进行参数微调以后，可以得到想要的与网页工具不同的图片如下图</span><br><span class="line">ggsave(&apos;survival_ARHGAP18_in_BLCA.png&apos;)</span><br></pre></td></tr></table></figure>
-<p><img src="https://zoeypic.oss-cn-beijing.aliyuncs.com/PCA分析画图-参数微调.png" alt></p>
 </li>
 </ul>
+<pre class=" language-r"><code class="language-r">ggsurvplot<span class="token punctuation">(</span>sfit<span class="token punctuation">,</span>palette <span class="token operator">=</span> c<span class="token punctuation">(</span>"<span class="token comment" spellcheck="true">#E7B800","#2E9FDF"),</span>
+           risk.table <span class="token operator">=</span> <span class="token boolean">TRUE</span><span class="token punctuation">,</span>
+           pval <span class="token operator">=</span> <span class="token boolean">TRUE</span><span class="token punctuation">,</span>
+           conf.int <span class="token operator">=</span> <span class="token boolean">TRUE</span><span class="token punctuation">,</span>
+           xlab<span class="token operator">=</span><span class="token string">"Time in months"</span><span class="token punctuation">,</span>
+           ggtheme <span class="token operator">=</span> theme_light<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+           ncensor.plot <span class="token operator">=</span> <span class="token boolean">TRUE</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#对该函数根据需要进行参数微调以后，可以得到想要的与网页工具不同的图片如下图</span>
+ggsave<span class="token punctuation">(</span><span class="token string">'survival_ARHGAP18_in_BLCA.png'</span><span class="token punctuation">)</span>
+</code></pre>
+<p>  <img src="https://zoeypic.oss-cn-beijing.aliyuncs.com/PCA分析画图-参数微调.png" alt></p>
 <p><strong>最重要的是 查看函数ggsurvplot()的帮助文档,了解这些参数的用途</strong></p>
 
             </div>
@@ -696,29 +747,40 @@ R studio分为四区
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">#第一讲 介绍R语言以及Rstudio编辑器
-
+                    <div class="summary">第一讲 介绍R语言以及Rstudio编辑器
 R studio分为四区
 上下键找到输入过的代码
 帮助文档！help
 右上角，环境变量，运行过的变量
 配置文件：设置中文英文显示形式等
 
-#第二讲 R语言基础变量讲解
-##五种变量类型(cla</div>
+第二讲 R语言基础变量讲解五种变量类型(class)向量
+</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-06
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            Zoey
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/R/" class="post-category" target="_blank">
+                                    R
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/R/" target="_blank">
+                        <span class="chip bg-color">R</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
