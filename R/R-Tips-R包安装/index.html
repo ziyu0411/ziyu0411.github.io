@@ -4,18 +4,10 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Tips, Zoey&#39;s Blog">
-    <meta name="description" content="iTerm
-Ctrl +C 停止正在运行的程序
-按住command可以点击出现的链接并打开
-向上箭头可以找到输入过的命令
-
-touch 新建一个空文件
-
-sudo 获取权限
-
-Hexo一些命令
-hexo new 生成新的 md文件的名字，名">
+    <meta name="keywords" content="R-Tips-R包安装, Zoey&#39;s Blog">
+    <meta name="description" content="
+4种常见的R包安装方式R自带函数直接安装这种方式不需要考虑各种包之间的依赖关系
+对普通的R包，直接install.packages()即可，一般下载不了都是包的名字打错了，或者是R的版本不够。如果下载了安装不了，一般是依赖包没弄好，或者你">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -23,7 +15,7 @@ hexo new 生成新的 md文件的名字，名">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Tips | Zoey&#39;s Blog</title>
+    <title>R-Tips-R包安装 | Zoey&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -153,13 +145,13 @@ hexo new 生成新的 md文件的名字，名">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Tips
+                        R-Tips-R包安装
                     </div>
                 </div>
             </div>
@@ -270,8 +262,8 @@ hexo new 生成新的 md文件的名字，名">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/常用操作/" target="_blank">
-                                <span class="chip bg-color">常用操作</span>
+                            <a href="/tags/tips/" target="_blank">
+                                <span class="chip bg-color">tips</span>
                             </a>
                         
                     </div>
@@ -282,8 +274,8 @@ hexo new 生成新的 md文件的名字，名">
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Tips/" class="post-category" target="_blank">
-                                Tips
+                            <a href="/categories/R/" class="post-category" target="_blank">
+                                R
                             </a>
                         
                     </div>
@@ -294,7 +286,7 @@ hexo new 生成新的 md文件的名字，名">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2019-04-09
+                    2019-04-14
                 </div>
 
                 
@@ -305,59 +297,46 @@ hexo new 生成新的 md文件的名字，名">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="iTerm"><a href="#iTerm" class="headerlink" title="iTerm"></a>iTerm</h3><ul>
-<li>Ctrl +C 停止正在运行的程序</li>
-<li>按住command可以点击出现的链接并打开</li>
-<li><p>向上箭头可以找到输入过的命令</p>
-</li>
-<li><p>touch 新建一个空文件</p>
-</li>
-<li>sudo 获取权限</li>
-</ul>
-<h3 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h3><h4 id="一些命令"><a href="#一些命令" class="headerlink" title="一些命令"></a>一些命令</h4><ul>
-<li>hexo new 生成新的 md文件的名字，名字不要用空格，不能有中文的标点符号</li>
-<li>hexo g -d生成博客页面并Push到Github</li>
-<li>hexo s 本地服务查看静态页面</li>
-</ul>
-<h3 id="Typora"><a href="#Typora" class="headerlink" title="Typora"></a>Typora</h3><ul>
-<li>command +/显示源码模式</li>
-<li>主要的语法结构和功能参照文档学习<a href="https://blog.csdn.net/moonclearner/article/details/52842679" target="_blank" rel="noopener">typora语法与功能</a></li>
-</ul>
-<h3 id="PicGo"><a href="#PicGo" class="headerlink" title="PicGo"></a>PicGo</h3><ul>
-<li>图片上传到云，获得链接(如md格式)</li>
-</ul>
-<h3 id="others"><a href="#others" class="headerlink" title="others"></a>others</h3><ul>
-<li><p><code>Command +T</code> 新建标签页；</p>
-<p><code>shift+command+T</code>恢复关掉的标签页</p>
-<p><strong><u>点击</u></strong>鼠标中间的滚轮  关闭标签页</p>
-</li>
-<li><p>聚焦搜索 command +空格 </p>
-</li>
-<li><p>换输入法  Ctrl +空格</p>
-</li>
-<li><p><code>Ctrl + A</code>  到行首</p>
-<p><code>Ctrl + E</code> 到行尾</p>
-<p><code>Ctrl + B</code>  向后</p>
-<p><code>Ctrl + F</code>  向前</p>
-<p><code>Ctrl + N</code>   下一行</p>
-<p><code>Ctrl + P</code>    上一行</p>
-</li>
-<li><p>shift+command+v  （Paste的快捷键）显示剪贴板</p>
-</li>
-<li><p>链接到服务器 <code>ssh  user@ip</code></p>
-</li>
-<li><p>域名后台控制台（域名是在west.cn网站买的）自己添加一条cname类型的解析。这样域名就指向我的github地址。</p>
-<p>又从仓库的博客那个项目github pages服务中匹配上了我的域名。</p>
-<p>这样域名就和项目关联起来。</p>
-<p><a href="http://iziyu.xyz">http://iziyu.xyz</a></p>
-</li>
-<li><p><code>command + z</code> 撤销</p>
-</li>
-<li><p><code>command + r</code> 刷新</p>
-</li>
-<li><p>域名看他的IP地址的方法是ping一下域名</p>
-</li>
-</ul>
+                <a id="more"></a>
+<h3 id="4种常见的R包安装方式"><a href="#4种常见的R包安装方式" class="headerlink" title="4种常见的R包安装方式"></a>4种常见的R包安装方式</h3><h4 id="R自带函数直接安装"><a href="#R自带函数直接安装" class="headerlink" title="R自带函数直接安装"></a>R自带函数直接安装</h4><p>这种方式不需要考虑各种包之间的依赖关系</p>
+<p>对普通的R包，直接<code>install.packages()</code>即可，一般下载不了都是包的名字打错了，或者是R的版本不够。如果下载了安装不了，一般是依赖包没弄好，或者你的电脑缺少一些库文件，如果实在是找不到或者下载慢，一般就用<code>repos=</code>来切换一些镜像。</p>
+<pre class=" language-r"><code class="language-r"><span class="token number">1</span>. <span class="token operator">></span> install.packages<span class="token punctuation">(</span><span class="token string">"ape"</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">## 直接输入包名字即可</span>
+<span class="token number">2</span>.Installing package into ‘C<span class="token operator">:</span><span class="token operator">/</span>Users<span class="token operator">/</span>jmzeng<span class="token operator">/</span>Documents<span class="token operator">/</span>R<span class="token operator">/</span>win<span class="token operator">-</span>library<span class="token operator">/</span><span class="token number">3.1</span>’<span class="token punctuation">(</span>as ‘lib’ is unspecified<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">##一般不指定lib，除非你明确知道你的lib是在哪里</span>
+<span class="token number">3</span>.trying URL <span class="token string">'http://mirror.bjtu.edu.cn/cran/bin/windows/contrib/3.1/ape_3.4.zip'</span>
+<span class="token number">5</span>.Content type <span class="token string">'application/zip'</span> length <span class="token number">1418322</span> bytes <span class="token punctuation">(</span><span class="token number">1.4</span> Mb<span class="token punctuation">)</span>
+<span class="token number">6</span>.opened URL  <span class="token comment" spellcheck="true">##根据你选择的镜像，程序会自动拼接好下载链接url</span>
+<span class="token number">7</span>.downloaded <span class="token number">1.4</span> Mbpackage ‘ape’ successfully unpacked and MD5 sums checked <span class="token comment" spellcheck="true">##表明你已经安装好包啦</span>
+<span class="token number">8</span>.The downloaded binary packages are <span class="token keyword">in</span> C<span class="token operator">:</span>\Users\jmzeng\AppData\Local\Temp\Rtmpy0OivY\downloaded_packages<span class="token comment" spellcheck="true">##程序自动下载的原始文件一般放在临时目录，会自动删除  </span>
+</code></pre>
+<p>对于<strong>bioconductor</strong>的包，一般是</p>
+<pre class=" language-r"><code class="language-r">source<span class="token punctuation">(</span><span class="token string">"http://bioconductor.org/biocLite.R"</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">##安装BiocInstaller</span>
+<span class="token comment" spellcheck="true">#options(BioC_mirror=”http://mirrors.ustc.edu.cn/bioc/“) 如果需要切换镜像</span>
+biocLite<span class="token punctuation">(</span><span class="token string">"ggbio"</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#或者直接</span>
+BiocInstaller<span class="token operator">::</span>biocLite<span class="token punctuation">(</span><span class="token string">'ggbio'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">## 前提是你已经安装好了BiocInstaller</span>
+<span class="token comment" spellcheck="true">#某些时候你还需要卸载</span>
+remove.packages<span class="token punctuation">(</span><span class="token string">"BiocInstaller"</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#然后安装新的</span>
+</code></pre>
+<h4 id="进入主页找到包下载地址"><a href="#进入主页找到包下载地址" class="headerlink" title="进入主页找到包下载地址"></a>进入主页找到包下载地址</h4><p>用R自带的下载器下载，也可以把下面的url拷贝到浏览器下载</p>
+<pre class=" language-r"><code class="language-r">packageurl <span class="token operator">&lt;-</span> <span class="token string">"http://cran.r-project.org/src/contrib/Archive/ggplot2/ggplot2_0.9.1.tar.gz"</span>
+packageurl <span class="token operator">&lt;-</span> <span class="token string">"http://cran.r-project.org/src/contrib/Archive/gridExtra/gridExtra_0.9.1.tar.gz"</span>
+install.packages<span class="token punctuation">(</span>packageurl<span class="token punctuation">,</span> repos<span class="token operator">=</span><span class="token keyword">NULL</span><span class="token punctuation">,</span> type<span class="token operator">=</span><span class="token string">"source"</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#packageurl &lt;- "http://www.bioconductor.org/packages/2.11/bioc/src/contrib/ggbio_1.6.6.tar.gz"</span>
+<span class="token comment" spellcheck="true">#packageurl &lt;- "http://cran.r-project.org/src/contrib/Archive/ggplot2/ggplot2_1.0.1.tar.gz"</span>
+install.packages<span class="token punctuation">(</span>packageurl<span class="token punctuation">,</span> repos<span class="token operator">=</span><span class="token keyword">NULL</span><span class="token punctuation">,</span> type<span class="token operator">=</span><span class="token string">"source"</span><span class="token punctuation">)</span>
+</code></pre>
+<p>这样安装的就不需要选择镜像了，也跨越了安装器的版本。</p>
+<h4 id="下载到本地后再安装"><a href="#下载到本地后再安装" class="headerlink" title="下载到本地后再安装"></a>下载到本地后再安装</h4><pre class=" language-r"><code class="language-r">download.file<span class="token punctuation">(</span><span class="token string">"http://bioconductor.org/packages/release/bioc/src/contrib/BiocInstaller_1.20.1.tar.gz"</span><span class="token punctuation">,</span><span class="token string">"BiocInstaller_1.20.1.tar.gz"</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">##也可以选择用浏览器下载这个包</span>
+install.packages<span class="token punctuation">(</span><span class="token string">"BiocInstaller_1.20.1.tar.gz"</span><span class="token punctuation">,</span> repos <span class="token operator">=</span> <span class="token keyword">NULL</span><span class="token punctuation">)</span>
+</code></pre>
+<p><strong>RStudio</strong>这样的IDE，用鼠标就可以操作。</p>
+<p>或者用<code>choose.files()</code>来手动选择把下载的源码<code>BiocInstaller_1.20.1.tar.gz</code>放到哪里。但这种形式大部分安装都无法成功，因为R包之间的依赖性很强！</p>
+<h4 id="命令行版本安装"><a href="#命令行版本安装" class="headerlink" title="命令行版本安装"></a>命令行版本安装</h4><p>如果是<strong>linux</strong>版本，命令行从网上自动下载包如下：</p>
+<pre><code>sudo su - -c \
+&quot;R -e \&quot;install.packages(&#39;shiny&#39;, repos=&#39;https://cran.rstudio.com/&#39;)\&quot;&quot;
+</code></pre><p>如果是linux，命令行安装本地包，在shell的终端</p>
+<pre><code>sudo R CMD INSTALL package.tar.gz
+</code></pre><p><strong>note</strong>!</p>
+<p><u>上述内容转自</u><a href="http://www.onesheng.cn/chfa/fangan/352047.html" target="_blank" rel="noopener">Jimmy的博客</a></p>
 
             </div>
             <hr>
@@ -381,7 +360,7 @@ hexo new 生成新的 md文件的名字，名">
                     </span>
                     <a href="https://iziyu.xyz" class="b-link-green">Zoey's Blog</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/tips/" class="b-link-green">Tips</a>
+                    <a href="/R/R-Tips-R包安装/" class="b-link-green">R-Tips-R包安装</a>
                 </p>
             </div>
         </div>
@@ -406,29 +385,24 @@ hexo new 生成新的 md文件的名字，名">
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/R/R初学者指南note/">
+                <a href="/R/R-Homework1/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="R初学者指南note">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="R-Homework1">
                         
-                        <span class="card-title">R初学者指南note</span>
+                        <span class="card-title">R-Homework1</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">R初学者指南引言程序包
-载入 library
+                    <div class="summary">
+基础知识检验
+getwd() 得到工作目录
 
-安装install.packages
-手动下载-R website-CRAN-software-packages
-R里下载安装
-
-
-R的一般问题
-退出q(save=&quot; &quot;)</div>
+下载 https://www.ncbi.nlm.nih.gov/sra?term=SRP133642 里面的 RunInfo Table 文件读入到R里面，了解这个数据框，多少列，每一列都是什</div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-09
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-15
                         </span>
                         <span class="publish-author">
                             
@@ -445,8 +419,12 @@ R的一般问题
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/R/" target="_blank">
-                        <span class="chip bg-color">R</span>
+                    <a href="/tags/exsercise/" target="_blank">
+                        <span class="chip bg-color">exsercise</span>
+                    </a>
+                    
+                    <a href="/tags/视频学习/" target="_blank">
+                        <span class="chip bg-color">视频学习</span>
                     </a>
                     
                 </div>
@@ -460,32 +438,36 @@ R的一般问题
                 Next&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/标点符号的使用/">
+                <a href="/linux/linux学习/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="标点符号的使用">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="linux学习">
                         
-                        <span class="card-title">标点符号的使用</span>
+                        <span class="card-title">linux学习</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">中文标点符号一律使用中文全型（例：。 ， ； ：）输入；英文标点符号则使用英文半型（例：. , ; ：）输入，且除了左括弧、左引号之外，英文标点之后一律空一格 
-句号 。.
-结束一个完整的句子
+                    <div class="summary">生信环境入门需要的软件
+Git(MAC自带，不需要)
 
-逗号 ， ,
-三个或者三个以上的列举项目之间</div>
+WinSCP(是一款SFTP软件，mac上用)
+
+幕布？？？
+Markdown 工具：Typora
+Notepade++(Mac 上有vs code)
+brew:包管理软件
+X-she</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-08
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-09
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/写作/" class="post-category" target="_blank">
-                                    写作
+                            <a href="/categories/linux/" class="post-category" target="_blank">
+                                    linux
                                 </a>
                             
                             
@@ -495,8 +477,8 @@ R的一般问题
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/格式/" target="_blank">
-                        <span class="chip bg-color">格式</span>
+                    <a href="/tags/linux/" target="_blank">
+                        <span class="chip bg-color">linux</span>
                     </a>
                     
                 </div>
