@@ -308,10 +308,28 @@ getwd() 得到工作目录
 <li><p><code>getwd()</code> 得到工作目录</p>
 </li>
 <li><p>下载 <a href="https://www.ncbi.nlm.nih.gov/sra?term=SRP133642" target="_blank" rel="noopener">https://www.ncbi.nlm.nih.gov/sra?term=SRP133642</a> 里面的 <code>RunInfo Table</code> 文件读入到R里面，了解这个数据框，多少列，每一列都是什么属性的元素。（参考<a href="../../Tips-for-Bioinformatics">Tips-for-Bioinformatics</a>获取<code>runinfo table</code>） 这是一个单细胞转录组项目的数据，共768个细胞。</p>
-<pre class=" language-R"><code class="language-R">a <- 31 768 read.table('sraruntable.txt',header="T,sep" = '\t',dec="." ,fill="T)#读取数据,当sep=','时候出现报错：列的数目比列的名字多；换成制表符，就可以正常读取" class(a) [1] "data.frame" mode(a) "list" nrow(a)#有768行，即768个细胞 ncol(a)#有31列 for(i in 1:ncol(a)){ print(class(a[,i])) }#使用for循环得到数据框a每一列元素的属性 apply(a,2,function(x){ class(x) })#使用apply获得a中每一列的元素属性 apply(a,2,class)#使用apply获得a中每一列的元素属性的另一种方法,和上面得到相同的结果 < code></-></code></pre>
+<pre class=" language-R"><code class="language-R">a=read.table('SraRunTable.txt',header = T,sep = '\t',dec = '.',fill =T)#读取数据,当sep=','时候出现报错：列的数目比列的名字多；换成制表符，就可以正常读取
+class(a)
+[1] "data.frame"
+mode(a)
+[1] "list"
+nrow(a)#有768行，即768个细胞
+[1] 768
+ncol(a)#有31列
+[1] 31
+for(i in 1:ncol(a)){
+   print(class(a[,i]))
+}#使用for循环得到数据框a每一列元素的属性
+apply(a,2,function(x){
+  class(x)
+})#使用apply获得a中每一列的元素属性
+apply(a,2,class)#使用apply获得a中每一列的元素属性的另一种方法,和上面得到相同的结果
+</code></pre>
 </li>
 <li><p>下载 <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE111229" target="_blank" rel="noopener">https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE111229</a> 里面的<code>样本信息sample.csv</code>读入到R里面，了解这个数据框，多少列，每一列都是什么属性的元素。（参考 <a href="../../Tips-for-Bioinformatics">Tips-for-Bioinformatics</a>用R获取GEO样本信息sample.csv）</p>
-<pre class=" language-R"><code class="language-R">s <- read.csv('sample.csv',header="T,sep" = ",",dec="." ,fill="T)#读取数据" #可以使用和上面一样的方法得到列数，以及咧里面的元素的属性。 < code></-></code></pre>
+<pre class=" language-R"><code class="language-R">s=read.csv('sample.csv',header = T,sep = ",",dec = '.',fill =T)#读取数据
+#可以使用和上面一样的方法得到列数，以及咧里面的元素的属性。
+</code></pre>
 </li>
 <li><p>把前面两个步骤的两个表（<code>RunInfo Table</code> 文件，样本信息sample.csv）关联起来，使用merge函数。</p>
 <pre class=" language-r"><code class="language-r">d<span class="token operator">=</span>merge<span class="token punctuation">(</span>a<span class="token punctuation">,</span>S<span class="token punctuation">,</span>by.x <span class="token operator">=</span> <span class="token string">'Sample_Name'</span><span class="token punctuation">,</span>by.y <span class="token operator">=</span> <span class="token string">'Accession'</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#两个表中元素相同的列进行合并</span>

@@ -501,15 +501,39 @@ options(stringsAsFactors = F)
 source("http://bioconductor.org/biocLite.R")##安装BiocInstaller
 biocLite("airway")
 install.packages(airway)#安装airway,bioconductor的数据包
-library(airway)#载入数据包
+library(airway)#载入数据包，自带转录组表达的矩阵
 data(airway)#用data函数
-exprSet=assay(airway)
+exprSet=assay(airway)#assay来获取表达矩阵，芯片有其规定好的其他方式读取
+dim(exprSet)#查的数据行列数目
+group_list=colData(airway)[,3]
+exprSet=exprSet[apply(exprSet,1,function(x) sum(x>1) > 5),]#T即为1，F即为0，判断哪些基因保留需要，阈值自己确定，去掉表达量低的基因
+exprSet=log(edgeR::cpm(exprSet)+1)#去掉文库大小的差异，得到新的表达矩阵
+exprSet=exprSet[names(sort(apply(exprSet,1,mad),decreasing = T)[1:500]),]#进一步变小表达矩阵，取前50%
+M=cor(log2(exprSet+1))#获得相关性
+tmp=data.frame(g=group_list)
+rownames(tmp)=colnames(M)
+install.packages("pheatmap")
+library(pheatmap)
+pheatmap::pheatmap(M,annotation_col = tmp)#画表达热图
+
 </code></pre>
 </li>
 </ul>
 <p><strong>NOTE:</strong><br>我在载入R包airway的时候，就按照教程直接<code>library()</code>，但未发现，我以为是没安装，就想采用了<code>install.packages()</code>来安装包，但是并不能成功，R提示找不到对象”airway”。</p>
 <p>通过搜索发现，它是bioconductor里的数据包，<u>bioconductor分为三个包</u>，<em><u>功能函数包、数据包和注释包</u></em> ，注释包是各种各样的基因、芯片间的转换；数据包的功能就是为你加载数据，需要使用<code>data()</code>函数把它加载到当前的工作空间中。</p>
 <p>要使用airway,需要安装bioconductor,详情在<a href="../R-Tips-R包安装">R-Tips-R包安装</a>,这篇文章中写到了四种常见的R包安装方式。</p>
+<h2 id="芯片表达矩阵下游分析"><a href="#芯片表达矩阵下游分析" class="headerlink" title="芯片表达矩阵下游分析"></a><a href="http://www.bio-info-trainee.com/1194.html" target="_blank" rel="noopener">芯片表达矩阵下游分析</a></h2><p>需要表达矩阵和分组信息</p>
+<p>构造比较矩阵</p>
+<p>火山图、差异表达基因富集分析等</p>
+<p>需要看包的说明书</p>
+<h2 id="RNA-seq表达矩阵差异分析"><a href="#RNA-seq表达矩阵差异分析" class="headerlink" title="RNA-seq表达矩阵差异分析"></a>RNA-seq表达矩阵差异分析</h2><p>有标准的normalization的统计学方法</p>
+<p>因为数据结构特征不同，有专门的方法</p>
+<p><a href="http://www.bio-info-trainee.com/1533.html" target="_blank" rel="noopener">DESeq2方法</a></p>
+<pre class=" language-r"><code class="language-r">
+</code></pre>
+<p>Statquest</p>
+<p>下游，数据库挖掘</p>
+<p><a href="http://www.bio-info-trainee.com/3693.html" target="_blank" rel="noopener">生成表达矩阵</a></p>
 
             </div>
             <hr>
