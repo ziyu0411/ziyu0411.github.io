@@ -1,0 +1,761 @@
+<!DOCTYPE HTML>
+<html lang="">
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="RT-PCR数据分析, Zoey&#39;s Blog">
+    <meta name="description" content="
+Real time PCR的数据分析虽然做完RT，电脑自带的软件会给分析，但是还是自己需要对得到的结果进行进一步整理。
+对照组（CK）和实验组（treatment）都有内参和target gene ,每个样本的每个基因要有三个技术重复，以">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>RT-PCR数据分析 | Zoey&#39;s Blog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Zoey's Blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>Index</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>Categories</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>Tags</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="Search"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Zoey's Blog</div>
+        <div class="logo-desc">
+            
+            Good Good Study
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                Index
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                Categories
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                Tags
+            </a>
+        </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        RT-PCR数据分析
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/R/" target="_blank">
+                                <span class="chip bg-color">R</span>
+                            </a>
+                        
+                            <a href="/tags/技巧/" target="_blank">
+                                <span class="chip bg-color">技巧</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/summary/" class="post-category" target="_blank">
+                                summary
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2019-07-12
+                </div>
+
+                
+				
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <a id="more"></a>
+<h3 id="Real-time-PCR的数据分析"><a href="#Real-time-PCR的数据分析" class="headerlink" title="Real time PCR的数据分析"></a>Real time PCR的数据分析</h3><p>虽然做完RT，电脑自带的软件会给分析，但是还是自己需要对得到的结果进行进一步整理。</p>
+<p>对照组（CK）和实验组（treatment）都有内参和target gene ,每个样本的每个基因要有三个技术重复，以消除系统误差，并可根据技术重复的结果计算标准差；但是为了得到可靠的数据结果，要有生物学重复，进行方差分析得到差异显著性情况，并进行进一步的多重比较等。</p>
+<ul>
+<li><p><strong>技术重复</strong>是同一来源的样品，对其进行多次测定实验。取重复实验的平均值，由于平均值与组分本身相比变异较小， 所得到的表达评价更可靠。由于抽提具有可重复的特点， 与生物学重复相比， 技术重复的测量变异程度较小。但是技术重复不是完全独立的，取平均值不能去除共有的系统偏差（Yang and Speed, 2002）。重复分析来自同一个抽提物的RNA，通过减少实验中的技术变异， 将对特定的样本产生高可信度的测量结果， 但是并不能给出同一群体的另一个样本的任何信息。这就如同通过重复多次测量同一个男人和女人的身高，是无法得出男性和女性身高差异的结论一样。如果我们要预测并推测整个人群，测量几个不同的男人和几个不同的女人是必要的，即我们需要生物学重复</p>
+</li>
+<li><p><strong>生物学重复</strong>可以定义为不同来源但是同类的样品（同一群体的不同样本）。例如，同一来源独立制备的样本，或者不同来源的样本（不同的组织，或者一个细胞系的不同培养物）。对每一个RNA样本制备来说，只要抽提之后的步骤是独立进行的，那么分析测量就是独立的。当然，真正的生物学重复应使用独立的样本来源：例如平行培养的细胞或细胞株。虽然对于特定的基因，生物学重复的变异大于技术重复，但是由每一个独立样本引入的偏差通过取每一个测量的平均值几乎消除，因此生物学重复的实验结果易于广泛概括。通常， 生物学重复用于概括性结论的验证，技术重复用于减少这些结论的变异性（Yang and Speed,2002； Draghici et al.,2001） 。</p>
+<p>文中提及的相关文献链接：</p>
+<p>Yee Hwa Yang &amp; Terry Speed. Design issues for cDNA microarray experiments. Nature Reviews Genetics 3, 579-588 (August 2002)   <a href="http://www.nature.com/nrg/journal/v3/n8/full/nrg863.html" target="_blank" rel="noopener">http://www.nature.com/nrg/journal/v3/n8/full/nrg863.html</a></p>
+<p>Draghici S., Kuklin A., Hoff B. Shams S. - Experimental Design, Analysis of Variance and Slide Quality Assessment in Gene Expression Arrays, Current Opinion in Drug Discovery &amp; Development, vol. 4, no. 3, 2001. <a href="http://www.eng.wayne.edu/user_files/551/file/Quick_Upload/Experimental design, analysis of variance and slide quality assessment in.pdf" target="_blank" rel="noopener">http://www.eng.wayne.edu/user_files/551/file/Quick_Upload/Experimental%20design,%20analysis%20of%20variance%20and%20slide%20quality%20assessment%20in.pdf</a></p>
+<p>参考来源：<a href="http://blog.sina.com.cn/s/blog_3e6e83100100z8vr.html" target="_blank" rel="noopener">http://blog.sina.com.cn/s/blog_3e6e83100100z8vr.html</a></p>
+<h4 id="计算相对表达量"><a href="#计算相对表达量" class="headerlink" title="计算相对表达量"></a>计算相对表达量</h4><p>使用<br>$$<br>2^{-\Delta\Delta t}<br>$$<br>方法计算相对表达量，首先计算对照组的delta Ct值得平均值（target gene - housekeeping gene),再用每个样本的每个重复值的delta  Ct值减去照组的delta Ct值得平均值，得到一系列的delta delta Ct值，根据上述公式计算得到相应的相对表达量，计算平均值和标准差，绘制柱形图。</p>
+<h4 id="分析差异显著性"><a href="#分析差异显著性" class="headerlink" title="分析差异显著性"></a>分析差异显著性</h4><p>对于有生物学重复的，对于每一个同样处理的样本得到三个（或者更多）的相对表达量数值，就可以对不同组（处理）之间进行差异显著性分析，如方差分析，进而进行多重比较。</p>
+<p> 用R实现这一过程：</p>
+<ul>
+<li><p>读取数据</p>
+<pre class=" language-R"><code class="language-R">data <- read.table("c: users user data.txt",sep="\t" ,header="TRUE)" < code></-></code></pre>
+</li>
+<li><p>方差齐次性检验</p>
+<p>方法一</p>
+<pre class=" language-R"><code class="language-R">nom = bartlett.test(re~lab,data=data)#如果是双因素或者多因素的，需要使用interaction（）函数，leveneTest(y~interaction(var1,var2),data= data)
+> nom #会输出数据信息，以及bartlett's k-squared,df(自由度)，以及p-value
+
+> nom$p.value#输出p-value,当p值大于0.05时，说明各组方差没有差异，即方差齐性
+[1] 0.0002824496
+</code></pre>
+<p>方法二</p>
+<pre class=" language-R"><code class="language-R">install.packages("car")#SPSS软件使用Levene test进行齐性检验，R里需要安装car包。
+library("car")
+> nom1<-levenetest(re~lab,data = data)#如果是2因素，使用*，levenetest(y~ivar1*var2,data="data)"> nom1#输出检验结果
+> nom1$`Pr(>F)` # 输出p值，当p>0.05时，方差是齐性的。
+[1] 0.3433721        NA
+</-levenetest(re~lab,data></code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>方差分析</p>
+<pre class=" language-R"><code class="language-R">> oneway=aov(re~lab,data = data)#单因素方差分析，看整体的差异显著性
+> anova(oneway)
+Analysis of Variance Table#方差分析表
+
+Response: re
+          Df  Sum Sq Mean Sq F value    Pr(>F)    
+lab        5 2.45395 0.49079  580.91 7.076e-14 ***
+Residuals 12 0.01014 0.00084                      
+---
+Signif. codes:  
+0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1#差异标识
+</code></pre>
+</li>
+<li><p>多重比较</p>
+<p>TukeyHSD法</p>
+<pre class=" language-R"><code class="language-R">> comparsion =TukeyHSD(oneway,ordered =FALSE,conf.level = 0.95)#使用TukeyHSD法（Tukey’s Honestly Significant Difference）进行多重比较
+> comparsion#输出结果
+  Tukey multiple comparisons of means
+    95% family-wise confidence level
+
+Fit: aov(formula = re ~ lab, data = data)
+
+$`lab`
+            diff         lwr         upr     p adj
+s1-ck -0.4439333 -0.52364963 -0.36421704 0.0000000
+s2-ck -0.8506000 -0.93031629 -0.77088371 0.0000000
+s3-ck -0.1006000 -0.18031629 -0.02088371 0.0113436
+s4-ck -0.9996000 -1.07931629 -0.91988371 0.0000000
+s5-ck -0.6839333 -0.76364963 -0.60421704 0.0000000
+s2-s1 -0.4066667 -0.48638296 -0.32695037 0.0000000
+s3-s1  0.3433333  0.26361704  0.42304963 0.0000001
+s4-s1 -0.5556667 -0.63538296 -0.47595037 0.0000000
+s5-s1 -0.2400000 -0.31971629 -0.16028371 0.0000037
+s3-s2  0.7500000  0.67028371  0.82971629 0.0000000
+s4-s2 -0.1490000 -0.22871629 -0.06928371 0.0004513
+s5-s2  0.1666667  0.08695037  0.24638296 0.0001569
+s4-s3 -0.8990000 -0.97871629 -0.81928371 0.0000000
+s5-s3 -0.5833333 -0.66304963 -0.50361704 0.0000000
+s5-s4  0.3156667  0.23595037  0.39538296 0.0000002
+</code></pre>
+<p>LSD法（Fisher’s Least Significant Difference）</p>
+<pre class=" language-R"><code class="language-R">install.packages("agricolae")
+library("agricolae")
+out = LSD.test(oneway,"lab",p.adj="bonferroni")
+> out
+$`statistics`
+       MSerror Df      Mean       CV  t.value        MSD
+  0.0008448622 12 0.4908222 5.922004 3.648889 0.08659803
+
+$parameters
+        test  p.ajusted name.t ntr alpha
+  Fisher-LSD bonferroni    lab   6  0.05
+
+$means
+            re          std r         LCL        UCL
+ck 1.003933333 0.0014742230 3  0.96736946 1.04049721
+s1 0.560000000 0.0529150262 3  0.52343612 0.59656388
+s2 0.153333333 0.0404145188 3  0.11676946 0.18989721
+s3 0.903333333 0.0152752523 3  0.86676946 0.93989721
+s4 0.004333333 0.0005773503 3 -0.03223054 0.04089721
+s5 0.320000000 0.0200000000 3  0.28343612 0.35656388
+      Min    Max    Q25    Q50    Q75
+ck 1.0028 1.0056 1.0031 1.0034 1.0045
+s1 0.5000 0.6000 0.5400 0.5800 0.5900
+s2 0.1100 0.1900 0.1350 0.1600 0.1750
+s3 0.8900 0.9200 0.8950 0.9000 0.9100
+s4 0.0040 0.0050 0.0040 0.0040 0.0045
+s5 0.3000 0.3400 0.3100 0.3200 0.3300
+
+$comparison
+NULL
+
+$groups
+            re groups#直接给出显著性标记，字母法
+ck 1.003933333      a
+s3 0.903333333      b
+s1 0.560000000      c
+s5 0.320000000      d
+s2 0.153333333      e
+s4 0.004333333      f
+
+attr(,"class")
+[1] "group"
+</code></pre>
+</li>
+<li><p>整理数据</p>
+<pre class=" language-r"><code class="language-r">mar<span class="token operator">&lt;-</span>out<span class="token operator">$</span>groups
+rownamemar<span class="token operator">&lt;-</span>row.names<span class="token punctuation">(</span>mar<span class="token punctuation">)</span>
+newmar<span class="token operator">&lt;-</span>data.frame<span class="token punctuation">(</span>rownamemar<span class="token punctuation">,</span>mar<span class="token operator">$</span>re<span class="token punctuation">,</span>mar<span class="token operator">$</span>groups<span class="token punctuation">)</span>
+sort<span class="token operator">&lt;-</span>newmar<span class="token punctuation">[</span>order<span class="token punctuation">(</span>newmar<span class="token operator">$</span>rownamemar<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">]</span><span class="token comment" spellcheck="true">#以上步骤用于整理作图的数据框</span>
+rowname<span class="token operator">&lt;-</span>row.names<span class="token punctuation">(</span>out<span class="token operator">$</span>means<span class="token punctuation">)</span>
+mean<span class="token operator">&lt;-</span>out<span class="token operator">$</span>means<span class="token punctuation">[</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span>
+sd<span class="token operator">&lt;-</span>out<span class="token operator">$</span>means<span class="token punctuation">[</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span>
+marker<span class="token operator">&lt;-</span>sort<span class="token operator">$</span>mar.groups
+plotdata<span class="token operator">&lt;-</span>data.frame<span class="token punctuation">(</span>rowname<span class="token punctuation">,</span>mean<span class="token punctuation">,</span>sd<span class="token punctuation">,</span>marker<span class="token punctuation">)</span><span class="token comment" spellcheck="true">#将group的数据框按照列名字排序，目的是保持均值标准差一一对应</span>
+<span class="token operator">></span> plotdata<span class="token comment" spellcheck="true">#生成新的数据框</span>
+  rowname        mean           sd marker
+<span class="token number">1</span>      ck <span class="token number">1.003933333</span> <span class="token number">0.0014742230</span>      a
+<span class="token number">2</span>      s1 <span class="token number">0.560000000</span> <span class="token number">0.0529150262</span>      c
+<span class="token number">3</span>      s2 <span class="token number">0.153333333</span> <span class="token number">0.0404145188</span>      e
+<span class="token number">4</span>      s3 <span class="token number">0.903333333</span> <span class="token number">0.0152752523</span>      b
+<span class="token number">5</span>      s4 <span class="token number">0.004333333</span> <span class="token number">0.0005773503</span>      f
+<span class="token number">6</span>      s5 <span class="token number">0.320000000</span> <span class="token number">0.0200000000</span>      d
+</code></pre>
+</li>
+<li><p>使用ggplot2作图</p>
+<pre class=" language-R"><code class="language-R">library("ggplot2")
+p1<-ggplot(plotdata,aes(x=factor(rowname),y=mean))+geom_bar(position=position_dodge(0.6),width = 0.5,stat="identity" )#绘制基本图形 p2<-p1+geom_errorbar(aes(ymin="mean-sd,ymax=mean+sd),position=position_dodge(0.6),width=0.2)#加上误差线，根据的是得到的sd的值" p3<-p2+geom_text(aes(x="factor(rowname),y=mean+sd+0.05,label=marker),size=4,position=" position_dodge(0.6))#添加显著性标记 p4<-p3+xlab("")+ylab("relativ expression (%)")#添加坐标轴的标注 p5<-p4+coord_cartesian(ylim="c(0,1.3),expand" true)#改变坐标轴的显示范围，expand 表示坐标轴的空隙 mytheme<-theme_bw()+theme(axis.title="element_text(size" 12), axis.text="element_text(size=12)," panel.grid.major="element_line(color" ="white"), panel.grid.minor="element_line(colour" "white"), axis.text.x="element_text(size" 12,angle="0,vjust=0,hjust=0,color" "black"), axis.text.y="element_text(size" 12,color="black" ), legend.text="element_text(size" 12),legend.title="element_blank()," plot.margin="unit(c(0.5,0.5,0.5,0.5)," "cm")) p5+mytheme#设置图表的一些属性，坐标轴的名字，颜色以及字体大小等 ggsave("wanyixia1.pdf", width="10," height="10," units="cm" )#将图表保存为pdf文件，并定义大小 < code></-ggplot(plotdata,aes(x=factor(rowname),y=mean))+geom_bar(position=position_dodge(0.6),width></code></pre>
+</li>
+</ul>
+<p>这样就可以得到带有差异显著性标记的图表，当然也可以根据多重比较的结果使用简单的绘图方法，添加上显著性标记和误差线，但是！最重要的是对实验的设计和整理，做到有意义的重复和对照！</p>
+<p>参考来源：<a href="http://www.sohu.com/a/244420795_278730" target="_blank" rel="noopener">http://www.sohu.com/a/244420795_278730</a></p>
+
+            </div>
+            <hr>
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone, qq, weibo, douban"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            <div class="reprint">
+                <p>
+                    <span class="reprint-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;Reprint please specify:
+                    </span>
+                    <a href="https://iziyu.xyz" class="b-link-green">Zoey's Blog</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/RT-PCR数据分析/" class="b-link-green">RT-PCR数据分析</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-dot-circle-o"></i>&nbsp;Current
+            </div>
+            <div class="card">
+                <a href="/RT-PCR数据分析/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="RT-PCR数据分析">
+                        
+                        <span class="card-title">RT-PCR数据分析</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">
+Real time PCR的数据分析虽然做完RT，电脑自带的软件会给分析，但是还是自己需要对得到的结果进行进一步整理。
+对照组（CK）和实验组（treatment）都有内参和target gene ,每个样本的每个基因要有三个技术重复，以</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-12
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/summary/" class="post-category" target="_blank">
+                                    summary
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/R/" target="_blank">
+                        <span class="chip bg-color">R</span>
+                    </a>
+                    
+                    <a href="/tags/技巧/" target="_blank">
+                        <span class="chip bg-color">技巧</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/sRNA-Seq-REALATED/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="sRNA-Seq-RELATED">
+                        
+                        <span class="card-title">sRNA-Seq-RELATED</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">
+sRNA-Seq应该很久之前就知道实验室有两套小RNA的测序数据，但不是单一样本，是两个样本混合的数据，也是请人分析的，实验室成员利用分析结果挑了一些进行靶标，以及跨界的初步验证。忽然感觉对这些数据产生了兴趣。从这些数据中可以获得的信息。</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-21
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            Zoey
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/sRNA/" target="_blank">
+                        <span class="chip bg-color">sRNA</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建.
+
+            
+
+            
+			
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword" class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+
+</body>
+</html>
